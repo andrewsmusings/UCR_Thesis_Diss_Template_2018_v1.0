@@ -102,7 +102,7 @@ natbib]{biblatex}
     \newpage
     
     \pagenumbering{roman} % starts lower case roman numeral page numbering
-        \setcounter{page}{3} % starts after initial pages
+        \setcounter{page}{4} % starts after initial pages
     
 \input{docs/abstract}
 \newpage
@@ -148,8 +148,12 @@ natbib]{biblatex}
 \chapter{Chapter 6 Title}
 \input{docs/chapter6}
 
+\singlespacing
+    % This single spaces the bibliography
 \printbibliography
 
+\doublespacing
+    % Returns to double spacing for appendices
 \begin{appendices}
 \chapter{Title of your appendix or supplemental information}
 \input{docs/appendixA}
