@@ -1,0 +1,52 @@
+\section{Introduction}
+
+Hello graduate student! Welcome to this \LaTeX{} template that follows the University of California Riverside dissertation and thesis filing format as per 2018. As you begin, there are some important format guidelines to keep in mind.
+    \begin{itemize}
+        \item Follow the current instructions available at Grad Division
+        \item Attend the Diss/Thesis filing workshop
+        \item Start compiling your document early on
+        \item Bibliographies get tricky if the bibtex entries are not formatted correctly. Do yourself a favor and check the format as you enter them. But if you have problems consult the error log. If you use Sharelatex or Overleaf (two popular online latex editors) clear the cash before recompiling. Sometimes biber will shut down for one missing comma or a space in a bibtex key. Garbage in---Garbage out; so put in clean entries.
+        \item Use the reference command for figures and tables. An example is given below.
+        \item Congratulations on completing your graduate work!
+    \end{itemize}
+    
+\subsection{Citations}
+
+Here are some sample citations of an article \parencite{ezcurra2016coastal}, a book \parencite{felger1985people}, and a website \parencite{pew2015internettime}. You can also cite only the year or only the name as these sentences show below. Check the BibLatex package documentation for more standard citation commands.
+\begin{itemize}
+    \item \citeyear{ezcurra2016coastal} (cited the year only)
+    \item \citeauthor{felger1985people} (cited the authors only)
+    \item Since we wrote "natbib" in the biblatex package options, we can use the older natbib citation commands also. One can search for the natbib documentation or a natbib reference sheet for lists of commands.
+    \item \citet{ezcurra2016coastal}
+    \item \citealp{felger1985people}
+\end{itemize}
+
+\subsection{Figures and tables}
+
+You must not write see Fig. 1.1 with text, but use the reference command to write see Fig. \ref{fig:1.1}. You can see the difference in the code.
+\begin{figure}[H] % Take the H away if you want LaTeX to decide where to place your diagram
+\centering
+\includegraphics[scale = 0.3] {images/ucr}
+\caption{This is where you write your caption. Often the last sentence has no period} 
+\label{fig:1.1}
+\end{figure}
+
+
+You can refer to your table in the same way by writing see Table \ref{table:1.1}. Make sure to label your figures and tables in an organized fashion.
+
+\begin{table}[H] % Take the H away if you want LaTeX to decide where to place your diagram
+\centering
+\caption{Place your caption here. Table captions in the table environment go on top of the diagram as opposed to figure captions which are at the bottom}
+\label{table:1.1}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & Compound A & Compound B \\
+ \midrule
+$IC_{50}$ & 3.0 mg/ml & 0.76 mg/ml \\
+{[conf. int.]} & [4.4–2.0] & [2.0–0.7] \\
+Efficacy $\pm SE$ & $38.6 \pm 6.1\%$ & $9.1 \pm 6.8\%$ \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+

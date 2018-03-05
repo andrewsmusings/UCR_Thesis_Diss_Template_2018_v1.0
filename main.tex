@@ -1,0 +1,163 @@
+%*****************************
+% Place your information below
+%*****************************
+
+\newcommand{\Title}{Your Title Here}
+    % The first, last, all principal words and words with 4 letters or more must have the first letter capitalized, including those that follow hyphens in compound terms. The only words that should not be capitalized are articles (a, an, the), prepositions (e.g., in, to), and conjunctions (e.g., and, but, for) with fewer than 4 letters. Use word substitutes for formulas, symbols, superscripts, Greek letters, or other non-alphabetical symbols in the title. 
+\newcommand{\Author}{Firstname Lastname}
+    % The name on file at the registrar's office
+\newcommand{\Degree}{Doctor of Philosophy}
+    % Options are Doctor of Philosophy, Master of Arts, Master of Science, Master of Business Administration, or Master of Fine Arts
+\newcommand{\FieldofStudy}{Plant Biology}
+    % Use the program name on file at the registrar's office
+\newcommand{\ConferralDate}{March 2018}
+    % Conferral months are December, March, June, and September with year
+\newcommand{\Year}{2018}
+    % Just year for copyright page
+\newcommand{\DocumentType}{Dissertation}
+%\newcommand{\DocumentType}{Thesis}
+    % If it is a master's use Thesis
+\newcommand{\CommChair}{Chairperson name}
+\newcommand{\CommMembtwo}{Second committee member name}
+\newcommand{\CommMembthree}{Third committee member name}    
+%\renewcommand{CommMembfour}{Fourth committee member name}
+%\renewcommand{CommMembfive}{Fifth committee member name}
+    % To use more than three members you must add more signature lines by copying and pasting the signature line code on the signature page. You must also copy and paste lines of code for the committee member names on the title page.
+
+\documentclass[12pt]{report} 
+    % Font can be 10, 11, 0r 12 point
+\usepackage[T1]{fontenc} 
+    % Output 256 fonts and diacritics as one for copy-paste and hyphenation and searching
+\usepackage[utf8]{inputenc} 
+    % Allows the user to input accented characters directly from the keyboard
+\usepackage{graphicx} 
+    % Allows images. In the figure environment use the path images/youimagefilename
+%\graphicspath{  {images/}  } 
+    % Allows one to take the images/ part of the path out of your figure environment code
+\usepackage[letterpaper,top=1.5in,left=1.5in,bottom=1.0in,right=1.0in]{geometry} 
+    % This sets the page margins to UCR specifications
+
+%**************************
+% Bibliography and Packages
+%**************************
+
+\usepackage[backend=biber,
+style=authoryear,
+% style=numeric,
+sorting=nty,
+% sorting=none,
+natbib]{biblatex} 
+    % Citation style and bibliography sorting options
+    % n=name, t=title, y=year for sorting order
+    % Various styles exist where authoryear is common
+    % Since this template uses BibLaTeX with backend Biber, for more styles search "Biblatex citation styles" or go to https://www.sharelatex.com/learn/Biblatex_citation_styles
+    % You will most likely use the citation commands \cite{}, \parencite{}, citename{}, \citedate{}, but many are listed in the Biblatex package documentation (Adding natbib in the options also allows natbib citation commands)
+    
+\addbibresource{bibfile.bib} 
+    % your bibtex bibliography file name
+\usepackage{setspace} 
+    % Allows double spacing with \doublespacing command
+\doublespacing
+\usepackage[all]{nowidow} 
+    % Does not allow single lines of text on a page. Alternatively use widow or club penalty below
+%\widowpenalty=9999
+%\clubpenalty=9999
+
+\usepackage{ragged2e} % Needed for the justify text command below
+\usepackage{lipsum}
+\usepackage[titletoc]{appendix} 
+    % Option titletoc gives the word appendix within the table of contents
+\usepackage{url} 
+    % Allows urls in works cited
+\usepackage{hyperref}
+\usepackage{float} 
+    % Allows [H] for figures and tables to go right where you type them
+\usepackage{booktabs}
+    % Allows book tab style tables
+
+%**************************
+% Place your packages below
+%**************************
+
+
+
+%********************************
+% Other items you may want to add
+%********************************
+
+% Optional
+%\renewcommand{\UrlBreaks}{\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\/\do\-\do\_\do\:\do\.} 
+    % This alows breaks at words in url to eliminate horizontal white space
+
+
+\begin{document}
+
+\input{docs/titlepage}
+    \newpage
+\input{docs/copyrightpage.tex}
+\thispagestyle{empty}
+    \newpage
+\input{docs/signatureapproval.tex}
+\thispagestyle{empty}
+    \newpage
+    
+    \pagenumbering{roman} % starts lower case roman numeral page numbering
+        \setcounter{page}{3} % starts after initial pages
+    
+\input{docs/abstract}
+\newpage
+
+%\chapter*{Dedication} % For dedication heading
+\chapter*{} % For dedication with no heading
+\input{docs/dedication}
+
+\begin{justify}
+
+
+\chapter*{Acknowledgements}
+\input{docs/acknowledgements}
+
+\tableofcontents 
+    \newpage
+    
+\listoffigures
+    \newpage
+
+\listoftables
+    \newpage
+    
+\pagenumbering{arabic} % starts arabic page numbers
+    \setcounter{page}{1}
+    
+\chapter{Chapter 1 Title}
+\input{docs/chapter1}
+
+
+\chapter{Chapter 2 Title}
+\input{docs/chapter2}
+
+\chapter{Chapter 3 Title}
+\input{docs/chapter3}
+
+\chapter{Chapter 4 Title}
+\input{docs/chapter4}
+
+\chapter{Chapter 5 Title}
+\input{docs/chapter5}
+
+\chapter{Chapter 6 Title}
+\input{docs/chapter6}
+
+\printbibliography
+
+\begin{appendices}
+\chapter{Title of your appendix or supplemental information}
+\input{docs/appendixA}
+%\chapter{Title of your appendix or supplemental information}
+%\input{docs/appendixB}
+%\chapter{Title of your appendix or supplemental information}
+%\input{docs/appendixC}
+\end{appendices}
+
+\end{justify}
+\end{document}
