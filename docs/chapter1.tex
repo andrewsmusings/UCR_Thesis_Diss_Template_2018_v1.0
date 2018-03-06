@@ -7,6 +7,11 @@ Hello graduate student! Welcome to this \LaTeX{} template that follows the Unive
         \item Start compiling your document early on
         \item Bibliographies get tricky if the bibtex entries are not formatted correctly. Do yourself a favor and check the format as you enter them. But if you have problems consult the error log. If you use Sharelatex or Overleaf (two popular online latex editors) clear the cash before recompiling. Sometimes biber will shut down for one missing comma or a space in a bibtex key. Garbage in---Garbage out; so put in clean entries.
         \item Use the reference command for figures and tables. An example is given below.
+        \item Spacing in the table environment is not changed by the doublespacing command. But the longtable environment seems to be changed. To manually set the spacing use the \begin{verbatim}
+            \begin{spacing}{1.0}
+                longtable info here
+            \end{spacing}
+        \end{verbatim}
         \item Congratulations on completing your graduate work!
     \end{itemize}
     

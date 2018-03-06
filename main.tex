@@ -20,8 +20,8 @@
 \newcommand{\CommChair}{Chairperson name}
 \newcommand{\CommMembtwo}{Second committee member name}
 \newcommand{\CommMembthree}{Third committee member name}    
-%\renewcommand{CommMembfour}{Fourth committee member name}
-%\renewcommand{CommMembfive}{Fifth committee member name}
+%\newcommand{CommMembfour}{Fourth committee member name}
+%\newcommand{CommMembfive}{Fifth committee member name}
     % To use more than three members you must add more signature lines by copying and pasting the signature line code on the signature page. You must also copy and paste lines of code for the committee member names on the title page.
 
 \documentclass[12pt]{report} 
@@ -88,7 +88,7 @@ natbib]{biblatex}
 % Optional
 %\renewcommand{\UrlBreaks}{\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\/\do\-\do\_\do\:\do\.} 
     % This alows breaks at words in url to eliminate horizontal white space
-
+\usepackage{verbatim}
 
 \begin{document}
 
@@ -132,7 +132,6 @@ natbib]{biblatex}
 \chapter{Chapter 1 Title}
 \input{docs/chapter1}
 
-
 \chapter{Chapter 2 Title}
 \input{docs/chapter2}
 
@@ -157,7 +156,7 @@ natbib]{biblatex}
 \begin{appendices}
 \chapter{Title of your appendix or supplemental information}
 \input{docs/appendixA}
-%\chapter{Title of your appendix or supplemental information}
+%\chapter{Title of your appendix or supplemental information} 
 %\input{docs/appendixB}
 %\chapter{Title of your appendix or supplemental information}
 %\input{docs/appendixC}
