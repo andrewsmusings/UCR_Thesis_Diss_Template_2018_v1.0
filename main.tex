@@ -59,7 +59,8 @@ natbib]{biblatex}
     % your bibtex bibliography file name
 \usepackage[doublespacing]{setspace} 
     % Allows double spacing with \doublespacing command or singlespacing with \singlespaceing command
-\usepackage[stretch=0.83]{caption}
+%\usepackage[font={stretch=0.83}]{caption} % 6 lines per inch exact single spacing
+\usepackage[font={stretch=1.0}]{caption} % 5 lines per inch functional single spacing
     % Sets caption spacing at single spacing. The stretch factor of 0.83 (6/5ths) gives true single spacing. Strictly single spacing at 12 point font is 6 lines per inch and double spacing is 3 lines per inch. Since captions are often given at 5 lines per inch, the factor 0.83 returns true single spacing. You should verify this in a PDF editor such as Adobe. In the view settings activate rulers and grid to easily count the lines per inch. 
 \usepackage[all]{nowidow} 
     % Does not allow single lines of text on a page. Alternatively use widow or club penalty below
@@ -115,15 +116,17 @@ natbib]{biblatex}
 
     \pagenumbering{roman} % starts lower case roman numeral page numbering
         \setcounter{page}{4} % starts after initial pages
-    
+\begin{justify}
+\begin{spacing}{1.0}
 \input{docs/abstract}
+\end{spacing}
 \newpage
 
 %\chapter*{Dedication} % For dedication heading
 \chapter*{} % For dedication with no heading
 \input{docs/dedication}
 
-\begin{justify}
+
 
 
 \chapter*{Acknowledgements}

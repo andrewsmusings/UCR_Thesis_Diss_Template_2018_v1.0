@@ -12,6 +12,7 @@ Hello graduate student! Welcome to this \LaTeX{} template that follows the Unive
                 longtable info here
             \end{spacing}
         \end{verbatim}
+        \item Single spacing can be 5 or 6 lines per inch. To change single spacing to 6 lines per inch, change the begin{spacing}{1.0} command to begin{spacing}{0.83}. 0.83 is the factor that gives 6ths instead of 5ths. You can change these in in the file main.tex. If you do this you will also have to change the figure and table caption spacing. Do this by using the usepackage[font={stretch=0.83}]{caption} command. You can choose a factor of 1.0 or 0.83 in the main.tex file.
         \item Congratulations on completing your graduate work!
     \end{itemize}
     
@@ -32,7 +33,7 @@ You must not write see Fig. 1.1 with text, but use the reference command to writ
 \begin{figure}[H] % Take the H away if you want LaTeX to decide where to place your diagram
 \centering
 \includegraphics[scale = 0.3] {images/ucr}
-\caption{This is where you write your caption. Often the last sentence has no period} 
+\caption{This is where you write your caption. Often the last sentence has no period. This long text will help you measure and verify that your text is single spaced. Single spacing at 12 point fonts has six lines per inch and single spacing has three lines per inch. Sometimes this can change with modern computers but was an exact rule in the days of typewriters} 
 \label{fig:1.1}
 \end{figure}
 
@@ -41,7 +42,7 @@ You can refer to your table in the same way by writing see Table \ref{table:1.1}
 
 \begin{table}[H] % Take the H away if you want LaTeX to decide where to place your diagram
     \centering
-    \caption{Place your caption here. Table captions in the table environment go on top of the diagram as opposed to figure captions which are at the bottom}
+    \caption{Place your caption here. Table captions in the table environment go on top of the diagram as opposed to figure captions which are at the bottom. This long text will help you measure and verify that your text is single spaced. Single spacing at 12 point fonts has six lines per inch and single spacing has three lines per inch. Sometimes this can change with modern computers but was an exact rule in the days of typewriters}
     \label{table:1.1}
     \begin{tabular}{@{}lrr@{}}
     \toprule
@@ -55,3 +56,20 @@ You can refer to your table in the same way by writing see Table \ref{table:1.1}
 \end{table}
 
 
+\subsection{Here you can test your double spacing}
+\doublespacing
+\lipsum[1]
+
+\subsection{Here you can test your single spacing}
+\singlespacing
+\lipsum[1]
+
+\subsection{Here you can test your  beginspacing{0.83}}
+\begin{spacing}{0.83}
+\lipsum[1]
+\end{spacing}
+
+\subsection{Here you can test your beginspacing{1.0} command}
+\begin{spacing}{1.0}
+\lipsum[1]
+\end{spacing}
