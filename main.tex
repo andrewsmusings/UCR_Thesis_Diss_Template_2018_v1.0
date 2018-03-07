@@ -17,6 +17,7 @@
 \newcommand{\DocumentType}{Dissertation}
 %\newcommand{\DocumentType}{Thesis}
     % If it is a master's use Thesis
+    % The document type is capitalized as per Grad Div requirements
 \newcommand{\CommChair}{Chairperson name}
 \newcommand{\CommMembtwo}{Second committee member name}
 \newcommand{\CommMembthree}{Third committee member name}    
@@ -25,7 +26,7 @@
     % To use more than three members you must add more signature lines by copying and pasting the signature line code on the signature page. You must also copy and paste lines of code for the committee member names on the title page.
 
 \documentclass[12pt]{report} 
-    % Font can be 10, 11, 0r 12 point
+    % Font can be 10, 11, 0r 12 point but if you change it you may need to change the factor in the caption stretch option below
 \usepackage[T1]{fontenc} 
     % Output 256 fonts and diacritics as one for copy-paste and hyphenation and searching
 \usepackage[utf8]{inputenc} 
@@ -52,12 +53,14 @@ natbib]{biblatex}
     % Various styles exist where authoryear is common
     % Since this template uses BibLaTeX with backend Biber, for more styles search "Biblatex citation styles" or go to https://www.sharelatex.com/learn/Biblatex_citation_styles
     % You will most likely use the citation commands \cite{}, \parencite{}, citename{}, \citedate{}, but many are listed in the Biblatex package documentation (Adding natbib in the options also allows natbib citation commands)
-    
+\setlength\bibitemsep{12pt}
+    % This adds a space between bibliography entries. Use the same amount of points as your font.
 \addbibresource{bibfile.bib} 
     % your bibtex bibliography file name
-\usepackage{setspace} 
-    % Allows double spacing with \doublespacing command
-\doublespacing
+\usepackage[doublespacing]{setspace} 
+    % Allows double spacing with \doublespacing command or singlespacing with \singlespaceing command
+\usepackage[stretch=0.83]{caption}
+    % Sets caption spacing at single spacing. The stretch factor of 0.83 (6/5ths) gives true single spacing. Strictly single spacing at 12 point font is 6 lines per inch and double spacing is 3 lines per inch. Since captions are often given at 5 lines per inch, the factor 0.83 returns true single spacing. You should verify this in a PDF editor such as Adobe. In the view settings activate rulers and grid to easily count the lines per inch. 
 \usepackage[all]{nowidow} 
     % Does not allow single lines of text on a page. Alternatively use widow or club penalty below
 %\widowpenalty=9999
@@ -67,6 +70,9 @@ natbib]{biblatex}
 \usepackage{lipsum}
 \usepackage[titletoc]{appendix} 
     % Option titletoc gives the word appendix within the table of contents
+\usepackage{sectsty}
+    % Allows setting the font style for title, section, and chapter headings
+\allsectionsfont{\singlespacing}
 \usepackage{url} 
     % Allows urls in works cited
 \usepackage{hyperref}
@@ -90,17 +96,23 @@ natbib]{biblatex}
     % This alows breaks at words in url to eliminate horizontal white space
 \usepackage{verbatim}
 
-\begin{document}
+%**********************
+% Document begins below
+%**********************
 
-\input{docs/titlepage}
-    \newpage
-\input{docs/copyrightpage.tex}
-\thispagestyle{empty}
-    \newpage
-\input{docs/signatureapproval.tex}
-\thispagestyle{empty}
-    \newpage
-    
+\begin{document}
+    \begin{spacing}{1.0}
+        % Gives single spaced frontmatter
+        \input{docs/titlepage}
+            \newpage
+        \input{docs/copyrightpage.tex}
+            \thispagestyle{empty}
+                \newpage
+        \input{docs/signatureapproval.tex}
+            \thispagestyle{empty}
+                \newpage
+    \end{spacing}
+
     \pagenumbering{roman} % starts lower case roman numeral page numbering
         \setcounter{page}{4} % starts after initial pages
     
@@ -117,6 +129,7 @@ natbib]{biblatex}
 \chapter*{Acknowledgements}
 \input{docs/acknowledgements}
 
+\begin{spacing}{1.0}
 \tableofcontents 
     \newpage
     
@@ -124,8 +137,9 @@ natbib]{biblatex}
     \newpage
 
 \listoftables
+\end{spacing}
     \newpage
-    
+
 \pagenumbering{arabic} % starts arabic page numbers
     \setcounter{page}{1}
     
@@ -147,19 +161,22 @@ natbib]{biblatex}
 \chapter{Chapter 6 Title}
 \input{docs/chapter6}
 
-\singlespacing
+\begin{spacing}{1.0}
     % This single spaces the bibliography
-\printbibliography
-
-\doublespacing
+    \printbibliography
+\end{spacing}
     % Returns to double spacing for appendices
+
 \begin{appendices}
-\chapter{Title of your appendix or supplemental information}
-\input{docs/appendixA}
-%\chapter{Title of your appendix or supplemental information} 
-%\input{docs/appendixB}
-%\chapter{Title of your appendix or supplemental information}
-%\input{docs/appendixC}
+    \chapter{Title of your appendix or supplemental information}
+        \label{appendix:short_name_for_ref_command}
+        \input{docs/appendixA}
+%   \chapter{Title of your appendix or supplemental information} 
+%       \label{appendix:short_name_for_ref_command}
+%       \input{docs/appendixB}
+%   \chapter{Title of your appendix or supplemental information}
+%       \label{appendix:short_name_for_ref_command}
+%       \input{docs/appendixC}
 \end{appendices}
 
 \end{justify}

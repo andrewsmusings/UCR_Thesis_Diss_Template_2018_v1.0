@@ -40,17 +40,17 @@ You must not write see Fig. 1.1 with text, but use the reference command to writ
 You can refer to your table in the same way by writing see Table \ref{table:1.1}. Make sure to label your figures and tables in an organized fashion.
 
 \begin{table}[H] % Take the H away if you want LaTeX to decide where to place your diagram
-\centering
-\caption{Place your caption here. Table captions in the table environment go on top of the diagram as opposed to figure captions which are at the bottom}
-\label{table:1.1}
-\begin{tabular}{@{}lrr@{}}
-\toprule
- & Compound A & Compound B \\
- \midrule
-$IC_{50}$ & 3.0 mg/ml & 0.76 mg/ml \\
-{[conf. int.]} & [4.4–2.0] & [2.0–0.7] \\
-Efficacy $\pm SE$ & $38.6 \pm 6.1\%$ & $9.1 \pm 6.8\%$ \\ 
-\bottomrule
+    \centering
+    \caption{Place your caption here. Table captions in the table environment go on top of the diagram as opposed to figure captions which are at the bottom}
+    \label{table:1.1}
+    \begin{tabular}{@{}lrr@{}}
+    \toprule
+    & Compound A & Compound B \\
+    \midrule
+    $IC_{50}$ & 3.0 mg/ml & 0.76 mg/ml \\
+    {[conf. int.]} & [4.4–2.0] & [2.0–0.7] \\
+    Efficacy $\pm SE$ & $38.6 \pm 6.1\%$ & $9.1 \pm 6.8\%$ \\ 
+    \bottomrule
 \end{tabular}
 \end{table}
 
