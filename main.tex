@@ -97,11 +97,17 @@ natbib]{biblatex}
     % This alows breaks at words in url to eliminate horizontal white space
 \usepackage{verbatim}
 
+%\usepackage{parskip}
+
+%\setlenth{\parindent}{0em}
+    % Use this if indenting gives you trouble
+
 %**********************
 % Document begins below
 %**********************
 
 \begin{document}
+    
     \begin{spacing}{1.0}
         % Gives single spaced frontmatter
         \input{docs/titlepage}
@@ -118,16 +124,15 @@ natbib]{biblatex}
         \setcounter{page}{4} % starts after initial pages
 \begin{justify}
 \begin{spacing}{1.0}
+
 \input{docs/abstract}
+
 \end{spacing}
 \newpage
 
 %\chapter*{Dedication} % For dedication heading
 \chapter*{} % For dedication with no heading
 \input{docs/dedication}
-
-
-
 
 \chapter*{Acknowledgements}
 \input{docs/acknowledgements}
