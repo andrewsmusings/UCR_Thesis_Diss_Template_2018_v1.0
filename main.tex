@@ -14,16 +14,24 @@
     % Conferral months are December, March, June, and September with year
 \newcommand{\Year}{2018}
     % Just year for copyright page
+
+%*** Here you much choose between Dissertation or Thesis
 \newcommand{\DocumentType}{Dissertation}
 %\newcommand{\DocumentType}{Thesis}
     % If it is a master's use Thesis
     % The document type is capitalized as per Grad Div requirements
+%***
+
 \newcommand{\CommChair}{Chairperson name}
 \newcommand{\CommMembtwo}{Second committee member name}
 \newcommand{\CommMembthree}{Third committee member name}    
 %\newcommand{CommMembfour}{Fourth committee member name}
 %\newcommand{CommMembfive}{Fifth committee member name}
     % To use more than three members you must add more signature lines by copying and pasting the signature line code on the signature page. You must also copy and paste lines of code for the committee member names on the title page.
+
+%******************************************
+% Document class, Packages and Bibliography
+%******************************************
 
 \documentclass[12pt]{report} 
     % Font can be 10, 11, 0r 12 point but if you change it you may need to change the factor in the caption stretch option below
@@ -38,16 +46,13 @@
 \usepackage[letterpaper,top=1.5in,left=1.5in,bottom=1.0in,right=1.0in]{geometry} 
     % This sets the page margins to UCR specifications
 
-%**************************
-% Bibliography and Packages
-%**************************
-
-\usepackage[backend=biber,
-style=authoryear,
+\usepackage[backend=biber,style=authoryear,sorting=nty,natbib,uniquename=false,giveninits=true]{biblatex} 
+%\usepackage[backend=biber,
+%style=authoryear,
 % style=numeric,
-sorting=nty,
+%sorting=nty,
 % sorting=none,
-natbib]{biblatex} 
+%natbib,]{biblatex} 
     % Citation style and bibliography sorting options
     % n=name, t=title, y=year for sorting order
     % Various styles exist where authoryear is common
@@ -56,7 +61,7 @@ natbib]{biblatex}
 \setlength\bibitemsep{12pt}
     % This adds a space between bibliography entries. Use the same amount of points as your font.
 \addbibresource{bibfile.bib} 
-    % your bibtex bibliography file name
+    % Your bibtex bibliography file name
 \usepackage[doublespacing]{setspace} 
     % Allows double spacing with \doublespacing command or singlespacing with \singlespaceing command
 %\usepackage[font={stretch=0.83}]{caption} % 6 lines per inch exact single spacing
@@ -94,7 +99,7 @@ natbib]{biblatex}
 
 % Optional
 %\renewcommand{\UrlBreaks}{\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\/\do\-\do\_\do\:\do\.} 
-    % This alows breaks at words in url to eliminate horizontal white space
+    % This allows breaks at words in url to eliminate horizontal white space
 \usepackage{verbatim}
 
 %\usepackage{parskip}
